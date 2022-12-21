@@ -1,6 +1,11 @@
+/* config-overrides.js */
 const webpack = require('webpack');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = function override(config) {
+    config.plugins.push(new NodePolyfillPlugin({
+        excludeAliases: ["console"]
+      }))
     config.ignoreWarnings = [/Failed to parse source map/];
     const fallback = config.resolve.fallback || {};
     Object.assign(fallback, {
@@ -15,7 +20,7 @@ module.exports = function override(config) {
     config.resolve.fallback = fallback;
     config.plugins = (config.plugins || []).concat([
         new webpack.ProvidePlugin({
-            process: 'process/browser',
+            process: "process/browser.js",
             Buffer: ['buffer', 'Buffer']
         })
     ])

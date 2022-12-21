@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 html {
@@ -13,23 +14,21 @@ body {
 }
 
 @layer utilities {
-  @variants responsive {
     .masonry {
-      column-gap: 1.5em;
-      column-count: 1;
+        column-gap: 1.5em;
+        column-count: 1;
     }
     .masonry-sm {
-      column-gap: 1.5em;
-      column-count: 2;
+        column-gap: 1.5em;
+        column-count: 2;
     }
     .masonry-md {
-      column-gap: 1.5em;
-      column-count: 3;
+        column-gap: 1.5em;
+        column-count: 3;
     }
     .break-inside {
-      break-inside: avoid;
+        break-inside: avoid;
     }
-  }
 }
 
 .frosted-glass-black {
@@ -44,7 +43,360 @@ body {
   min-height: 80vh;
 }
 
-/*
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgb(0, 0, 0, 0.5);
+    color: white;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    border-radius: 5px;
+    background: #000000;
+    border: none;
+  }
+  .modal-header {
+    border: none;
+    text-align: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(180deg, #EC0B26 0%, #000000af 100%);
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+  }
+  .modal-body {
+    background: #000000;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .connect-wallet-item {
+    border-bottom: 0.5px solid #ffffff;
+    margin: 10px auto;
+    padding: 10px 0;
+    width: 90%;
+    font-size: 26px;
+  }
+  .connect-wallet-item:last-child {
+    border-bottom: none;
+  }
+  .wallet {
+    cursor: pointer;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .wallet-icon {
+    width: 50px;
+    height: 50px;
+    margin: 2px auto;
+    margin-right: 30px;
+    padding: 0;
+  }
+  .wallet-name {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 33px;
+    /* identical to box height */
+  
+    letter-spacing: 0.03em;
+  }
+  .modal-title {
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+  
+    letter-spacing: 0.03em;
+  }
+  .wallet-content {
+    font-size: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    .wallet-icon {
+      width: 35px;
+      height: 35px;
+      margin: 2px auto;
+      margin-right: 30px;
+      padding: 0;
+    }
+    .wallet-name {
+      font-size: 18px;
+    }
+    .wallet-content {
+      font-size: 13px;
+    }
+  }
+
+@font-face {
+  font-family: 'Notification';
+  src: url("./assets/fonts/notification.eot");
+  src: url("./assets/fonts/notification.eot") format("embedded-opentype"), url("./assets/fonts/notification.woff") format("woff"), url("./assets/fonts/notification.ttf") format("truetype"), url("./assets/fonts/notification.svg#notification") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.notification-container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999999;
+  width: 320px;
+  padding: 0px 15px;
+  max-height: calc(100% - 30px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.notification {
+  box-sizing: border-box;
+  padding: 15px 15px 15px 58px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #ccc;
+  box-shadow: 0 0 12px #999;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1.2em;
+  position: relative;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.notification .title {
+  font-size: 1em;
+  line-height: 1.2em;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.notification:hover, .notification:focus {
+  opacity: 1;
+}
+
+.notification-enter {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+}
+
+.notification-enter.notification-enter-active {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.4s;
+}
+
+.notification-exit {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+}
+
+.notification-exit.notification-exit-active {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+  transition: all 0.4s;
+}
+
+.notification:before {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -14px;
+  display: block;
+  font-family: 'Notification';
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 28px;
+}
+
+.notification-info {
+  background-color: #2f96b4;
+}
+
+.notification-info:before {
+  content: "";
+}
+
+.notification-success {
+  background-color: #51a351;
+}
+
+.notification-success:before {
+  content: "";
+}
+
+.notification-warning {
+  background-color: #f89406;
+}
+
+.notification-warning:before {
+  content: "";
+}
+
+.notification-error {
+  background-color: #bd362f;
+}
+
+.notification-error:before {
+  content: "";
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgb(0, 0, 0, 0.5);
+    color: white;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    border-radius: 5px;
+    background: #000000;
+    border: none;
+  }
+  .modal-header {
+    border: none;
+    text-align: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(180deg, #EC0B26 0%, #000000af 100%);
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+  }
+  .modal-body {
+    background: #000000;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .connect-wallet-item {
+    border-bottom: 0.5px solid #ffffff;
+    margin: 10px auto;
+    padding: 10px 0;
+    width: 90%;
+    font-size: 26px;
+  }
+  .connect-wallet-item:last-child {
+    border-bottom: none;
+  }
+  .wallet {
+    cursor: pointer;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .wallet-icon {
+    width: 50px;
+    height: 50px;
+    margin: 2px auto;
+    margin-right: 30px;
+    padding: 0;
+  }
+  .wallet-name {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 33px;
+    /* identical to box height */
+  
+    letter-spacing: 0.03em;
+  }
+  .modal-title {
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+  
+    letter-spacing: 0.03em;
+  }
+  .wallet-content {
+    font-size: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    .wallet-icon {
+      width: 35px;
+      height: 35px;
+      margin: 2px auto;
+      margin-right: 30px;
+      padding: 0;
+    }
+    .wallet-name {
+      font-size: 18px;
+    }
+    .wallet-content {
+      font-size: 13px;
+    }
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .check {
+    width: 30px;
+    height: 30px;
+    margin-top: -70px;
+  }
+  .items-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: visible;
+    scrollbar-color: #ec0b26 darkgray;
+    scrollbar-width: thin;
+  }
+  
+  .items-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .items-container::-webkit-scrollbar-track {
+    background-color: darkgrey;
+    border-radius: 3px;
+  }
+  
+  .items-container::-webkit-scrollbar-thumb {
+    background-color: #ec0b26;
+    border-radius: 3px;
+  }
+  
+  .item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .item-desc {
+    font-size: 10px;
+    padding-top: 10px;
+  }
+  .item-price {
+    font-size: 10px;
+  }
+  
+  /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -410,55 +762,4 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 [hidden] {
   display: none;
-}
-
-
-.avatar {
-  width: 70px;
-  height: 70px;
-}
-.check {
-  width: 30px;
-  height: 30px;
-  margin-top: -70px;
-}
-.items-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 200px;
-  overflow-y: scroll;
-  overflow-x: visible;
-  scrollbar-color: #ec0b26 darkgray;
-  scrollbar-width: thin;
-}
-
-.items-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.items-container::-webkit-scrollbar-track {
-  background-color: darkgrey;
-  border-radius: 3px;
-}
-
-.items-container::-webkit-scrollbar-thumb {
-  background-color: #ec0b26;
-  border-radius: 3px;
-}
-
-.item-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 50px;
-}
-.item-desc {
-  font-size: 10px;
-  padding-top: 10px;
-}
-.item-price {
-  font-size: 10px;
 }
