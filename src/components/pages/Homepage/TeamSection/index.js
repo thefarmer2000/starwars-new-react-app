@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 import ReactCardFlip from 'react-card-flip';
-import '../../../../main.css'
 
 
 function TeamMember(props) {

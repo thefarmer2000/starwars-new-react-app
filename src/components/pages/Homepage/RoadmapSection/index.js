@@ -4,7 +4,6 @@ import roadmapLineCircle from "../../../../assets/img/roadmap-line-circle.svg";
 import swordTail from "../../../../assets/img/sword-tail.svg";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import '../../../../main.css'
 
 function RoadMapSection(props) {
   let timeline = [

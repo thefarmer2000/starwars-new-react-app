@@ -6,6 +6,7 @@ import Phases from './Phases';
 import Staked from './Staked';
 import UnStaked from './Unstaked';
 import WalletConnetor from '../../common/WalletConnetor';
+import './index.css'
 
 function StakePage(props) {
     const [modalView, setModalView] = useState(false)

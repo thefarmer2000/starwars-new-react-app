@@ -1,7 +1,6 @@
 import React from "react";
 import heroCard from "../../../../assets/img/hero_card.png";
 import { motion } from "framer-motion";
-import '../../../../main.css'
 
 function HeroSection(props) {
   return (

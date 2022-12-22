@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import HamburgerMenu from 'react-hamburger-menu';
 import { Link, NavLink } from 'react-router-dom';
-import '../../main.css'
 
 function HamMenu({ isHamOpen, setIsHamOpen, links }) {
     return (

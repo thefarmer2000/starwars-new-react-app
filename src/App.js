@@ -3,8 +3,10 @@ import { NotificationContainer } from 'react-notifications'
 import HomePage from "./components/pages/Homepage";
 import StakePage from "./components/pages/Stake";
 import 'react-notifications/lib/notifications.css'
+import './index.css';
 
 function App() {
+  
   return (
     <>
       <Routes>

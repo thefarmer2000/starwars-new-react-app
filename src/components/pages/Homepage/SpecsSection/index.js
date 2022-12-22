@@ -3,8 +3,6 @@ import specsImage from '../../../../assets/img/specs-image.png'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from "react-responsive";
-import '../../../../main.css'
-
 function SpecsSection(props) {
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
     const animation = useAnimation();

@@ -4,7 +4,6 @@ import HamburgerMenu from "react-hamburger-menu";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/img/logo.svg";
 import HamMenu from "./HamMenu";
-import '../../main.css'
 
 const links = [
   {

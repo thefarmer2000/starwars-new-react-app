@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useStakeAccountInfo, useUnstake, useMonkPending } from '../../../hooks/useStakeData'
 import Data from '../../../config/data.json'
-// import CheckBg from '../../../assets/img/check.png'
+import CheckBg from '../../../assets/img/check.png'
 import BigNumber from 'bignumber.js';
 import { formatBigNumber } from '../../../utils/utils'
-import '../../../main.css'
+import './index.css'
 
 function Staked(props) {
     const { update, setUpdate } = props;
@@ -112,9 +112,9 @@ function Staked(props) {
                                     <div className="item-desc">HakuMonk #{ninja.tokenId}</div>
                                     <div className="item-price">{formatBigNumber(formatBigNumber(accHakuPerNinja).minus(new BigNumber(ninja.value))).toFormat(3)} HAKU</div>
                                     {
-                                        // checkSelectedNinja(ninja.tokenId) ?
-                                        //     <img src={CheckBg} alt="" className="check" />
-                                        //     :
+                                        checkSelectedNinja(ninja.tokenId) ?
+                                            <img src={CheckBg} alt="" className="check" />
+                                            :
                                             <div className="check"></div>
                                     }
                                 </div>
@@ -145,9 +145,9 @@ function Staked(props) {
                                         <div className="item-desc">HakuMonk #{monk.tokenId}</div>
                                         <div className="item-price">{formatBigNumber(new BigNumber(monkPending[index])).toFormat(3)} HAKU</div>
                                         {
-                                            // checkSelectedMonk(monk.tokenId) ?
-                                            //     <img src={CheckBg} alt="" className="check" />
-                                            //     :
+                                            checkSelectedMonk(monk.tokenId) ?
+                                                <img src={CheckBg} alt="" className="check" />
+                                                :
                                                 <div className="check"></div>
                                         }
                                     </div>

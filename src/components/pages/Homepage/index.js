@@ -8,8 +8,6 @@ import HorizontalSection from './HorizontalSection';
 import RoadMapSection from './RoadmapSection';
 import SpecsSection from './SpecsSection';
 import TeamSection from './TeamSection';
-import '../../../main.css'
-
 
 function HomePage(props) {
     return (

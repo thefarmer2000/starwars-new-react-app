@@ -1,7 +1,6 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/solid";
-import '../../../../main.css'
 
 function FAQSection(props) {
   return (

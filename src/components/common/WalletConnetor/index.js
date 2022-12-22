@@ -14,7 +14,7 @@ import { wallets, connectorLocalStorageKey } from '../../../utils/connectors'
 import { setupNetwork } from '../../../utils/addRPC'
 import { ReactComponent as Arrow } from '../../../assets/img/arrow-right.svg'
 
-import '../../../main.css';
+import './index.css';
 
 const WalletConnetor = (props) => {
   const { modalView, setModalView } = props;

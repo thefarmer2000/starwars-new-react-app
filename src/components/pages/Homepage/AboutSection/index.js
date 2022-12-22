@@ -1,9 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-// import aboutChar from "../../../../assets/img/about-char.png";
+import monk from "../../../../assets/img/monk.png";
 import { useMediaQuery } from "react-responsive";
-import '../../../../main.css'
 
 function AboutSection(props) {
   const animation = useAnimation();
@@ -87,7 +86,7 @@ function AboutSection(props) {
           !isMobile &&
           <div className="w-1/12" />
         }
-        {/* <img className='w-3/12 max-w-md md:flex' src={aboutChar} alt='' /> */}
+        {<img className='w-3/12 max-w-md md:flex' src={monk} alt='' /> }
       </div>
     </motion.section>
   );

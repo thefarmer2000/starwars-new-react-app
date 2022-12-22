@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useNFTAccountInfo, useNinjaData } from '../../../hooks/useNFTData'
 import { useStake } from '../../../hooks/useStakeData'
 import Data from '../../../config/data.json'
-// import CheckBg from '../../../assets/img/check.png'
-import '../../../main.css'
+import CheckBg from '../../../assets/img/check.png'
+import './index.css'
 
 function UnStaked(props) {
     const { update, setUpdate } = props;
@@ -111,9 +111,9 @@ function UnStaked(props) {
                                         <img src={Data[id]} alt="" className="avatar" />
                                         <div className="item-desc">HakuMonk #{id}</div>
                                         {
-                                            // checkSelectedNinja(id) ?
-                                            //     <img src={CheckBg} alt="" className="check" />
-                                            //     :
+                                            checkSelectedNinja(id) ?
+                                                <img src={CheckBg} alt="" className="check" />
+                                                :
                                                 <div className="check"></div>
                                         }
                                     </div>
@@ -144,9 +144,9 @@ function UnStaked(props) {
                                         <img src={Data[id]} alt="" className="avatar" />
                                         <div className="item-desc">HakuMonk #{id}</div>
                                         {
-                                            // checkSelectedMonk(id) ?
-                                            //     <img src={CheckBg} alt="" className="check" />
-                                            //     :
+                                            checkSelectedMonk(id) ?
+                                                <img src={CheckBg} alt="" className="check" />
+                                                :
                                                 <div className="check"></div>
                                         }
                                     </div>

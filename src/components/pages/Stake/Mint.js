@@ -6,6 +6,7 @@ import { useETHBalance, useBalance, useAllowance, useApprove } from '../../../ho
 import { useInfo, useNFTAccountInfo, useMintedCountInfo, useMint } from '../../../hooks/useNFTData'
 import { formatBigNumber } from '../../../utils/utils'
 import config from '../../../config';
+import './index.css'
 
 function Mint(props) {
     const { setModalView } = props;

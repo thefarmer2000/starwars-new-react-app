@@ -4,6 +4,7 @@ import { useStakeInfo } from '../../../hooks/useStakeData'
 import { usePrice } from '../../../hooks/useLpData'
 import { formatBigNumber, formatedPercent } from '../../../utils/utils'
 import BigNumber from 'bignumber.js';
+import './index.css'
 
 function Phases(props) {
     const { update } = props;

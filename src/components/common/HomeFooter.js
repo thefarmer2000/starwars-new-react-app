@@ -1,6 +1,5 @@
 import React from 'react';
 import logoColor from '../../assets/img/logo-color.svg';
-import '../../main.css'
 
 function HomeFooter(props) {
     return (
